@@ -12,6 +12,9 @@ export function abstractApplicationTesting() {
       overrides: {
         // тут можно что-то переопределить
       },
+      logger: {
+        fileWritingEnabled: false,
+      },
     })
   })
 

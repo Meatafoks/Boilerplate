@@ -1,4 +1,4 @@
-import { Application, Config } from 'metafoks-application'
+import { Application, Config, LoggerFactory } from 'metafoks-application'
 import { AppConfig } from './config'
 
 /**
@@ -8,6 +8,8 @@ import { AppConfig } from './config'
  */
 @Application
 export class App {
+  private logger = LoggerFactory.create(App)
+
   /**
    * \@Config - декоратор для подключения конфигурации из директории config
    */
@@ -18,6 +20,6 @@ export class App {
    * Метод запускается после запуска приложения и установки расширений
    */
   public start() {
-    console.log('hello ' + this.config.hello)
+    this.logger.debug('hello ' + this.config.hello)
   }
 }
