@@ -9,10 +9,8 @@ import { App } from '../src'
 export function abstractApplicationTesting() {
   beforeAll(async () => {
     await startMetafoksTesting(App, {
-      props: {
-        overrideApplicationConfig: {
-          // тут можно что-то переопределить
-        },
+      overrides: {
+        // тут можно что-то переопределить
       },
     })
   })
