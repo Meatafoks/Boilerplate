@@ -1,4 +1,4 @@
-import { startMetafoksTesting } from 'metafoks-application'
+import { MetafoksApplication, startMetafoksTesting } from 'metafoks-application'
 import { App } from '../src'
 
 /**
@@ -20,5 +20,6 @@ export function abstractApplicationTesting() {
 
   afterAll(async () => {
     // Очистка после тестов
+    await MetafoksApplication.stopApplication()
   })
 }
